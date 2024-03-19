@@ -1,0 +1,67 @@
+.gitignore.- El archivo .gitignore es un archivo de configuración utilizado por Git para especificar 
+qué archivos y directorios deben ser ignorados por el control de versiones. Esto es útil cuando no deseas 
+que ciertos archivos generados automáticamente, archivos temporales o archivos de configuración específicos 
+de tu entorno de desarrollo sean incluidos en el repositorio Git.
+EJEMPLO: Supongamos que tienes un proyecto en el que estás utilizando Git para el control de versiones.
+En tu directorio de proyecto, tienes varios archivos y directorios, incluidos archivos de código fuente, archivos
+de configuración y archivos generados automáticamente. Por ejemplo:
+    proyecto/
+│   README.md
+│   index.html
+│   styles.css
+│   script.js
+│   .gitignore
+│   node_modules/
+│   dist/
+En este caso, `node_modules/` es un directorio que contiene las dependencias de Node.js instaladas a través de npm,
+y `dist/` es un directorio que contiene archivos compilados o generados automáticamente, como los archivos generados 
+por Webpack o Babel.
+Para evitar que estos directorios y sus archivos sean rastreados por Git, puedes crear un archivo .gitignore en la 
+raíz de tu proyecto y especificar los nombres de los directorios y archivos que deseas ignorar. Por ejemplo, el 
+contenido de .gitignore podría ser:
+    node_modules/
+    dist/
+Al incluir estas líneas en el archivo .gitignore, le estás diciendo a Git que ignore todos los archivos y directorios 
+que coincidan con esos patrones. Esto significa que node_modules/ y dist/, junto con todos sus contenidos, no serán 
+rastreados por Git y no se incluirán en el repositorio.
+
+
+package.json.- 
+El archivo package.json es un archivo de configuración fundamental en proyectos de Node.js. Contiene metadatos 
+del proyecto, como nombre, versión, descripción, scripts de inicio, dependencias y mucho más. Aquí tenemos un 
+ejemplo de cómo funciona el archivo package.json:
+
+Supongamos que estás creando un proyecto Node.js llamado "mi-proyecto". Para comenzar, se puede crear un archivo 
+package.json en la raíz del proyecto con la siguiente estructura:
+
+{
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "description": "Una descripción del proyecto",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
+"name": Es el nombre del proyecto.
+"version": Es la versión actual del proyecto. El formato de versiones suele seguir el esquema de versionamiento semántico.
+"description": Es una descripción breve del proyecto.
+"main": Es el punto de entrada principal del proyecto. En este caso, index.js es el archivo principal.
+"scripts": Contiene una serie de scripts que pueden ser ejecutados a través de npm. En este caso, hay un script llamado start, 
+que ejecuta node index.js.
+"dependencies": Es un objeto que contiene las dependencias del proyecto necesarias para su ejecución en producción. 
+Por ejemplo, en este caso, el proyecto depende de Express.
+"devDependencies": Similar a "dependencies", pero contiene dependencias necesarias solo para el desarrollo, 
+como herramientas de pruebas o de construcción. En este caso, dependemos de Nodemon, que es una herramienta que 
+reinicia automáticamente el servidor cuando se detectan cambios en el código durante el desarrollo.
+
+main.js.- 
+El archivo main.js es un archivo JavaScript comúnmente utilizado en proyectos de Node.js para especificar el 
+punto de entrada principal del programa. Por lo general, este archivo contiene la lógica inicial que se 
+ejecuta cuando se inicia la aplicación.
